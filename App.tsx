@@ -8,10 +8,11 @@ import {
 import {
     useFonts,
     Inter_900Black,
-  } from '@expo-google-fonts/inter';
+} from '@expo-google-fonts/inter';
 
 import { AppLoading } from 'expo';
 import Head from './ui/Head'
+import Values from './ui/Values'
 
 
 
@@ -48,30 +49,13 @@ export default function App() {
 
             <Container>
                 <Head />
-                <Content padder>
-                    <View style={styles.container}>
-                        <View>
-                        <Button
-                            warning
-                            onPress={() => Alert.alert(
-                                'Warning', 
-                                'erase iphone now?',
-                                    [
-                                        {text: 'OK',
-                                            onPress: ()=> console.log('hit ok')
-                                        },
-                                        {text: 'Cancel',
-                                            onPress: ()=> console.log('hit ok')
-                                        },
-                                    ]
-                                )}
-                        >
-                            <Icon name='beer' />
-                            <Text>Take a Break!</Text>
-                        </Button>
-                        </View>
-                        
-                        <Text>{copy && (Math.round(parseFloat(copy) * tip * 100) / 100).toFixed(2)}</Text>
+                <View style={styles.container}>
+                    <Content contentContainerStyle={styles.content}>
+ 
+                        <Values
+                            bill={copy}
+                            tipPercent={tip}
+                        />
                         <TextInput
                             value={copy}
                             style={styles.input}
@@ -84,7 +68,7 @@ export default function App() {
                             >
                                 <Text style={styles.btnStyle}>
                                     '10%'
-                                    </Text></Button>
+                                        </Text></Button>
                             <Button
                                 onPress={() => setTip(.20)}
                             ><Text>'20%'</Text></Button>
@@ -99,9 +83,10 @@ export default function App() {
                                 value={(tip * 100).toString()}
                             />
                         </View>
-                    </View>
-                </Content>
+                    </Content>
+                </View>
             </Container>
+
 
         );
     }
@@ -113,13 +98,18 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: '#fff',
+        backgroundColor: '#000',
         alignItems: 'center',
         fontFamily: ' Inter_900Black',
+        height: '100%',
+        width: '100%',
 
     },
-    centerChild:  {
-        justifyContent:'center'
+    content: {
+        width: '100%',
+    },
+    centerChild: {
+        justifyContent: 'center'
     },
     input: {
         height: 80,
@@ -134,13 +124,14 @@ const styles = StyleSheet.create({
         borderColor: '#333',
         borderWidth: 1,
         padding: 5,
+
     },
     buttonGroup: {
         flexDirection: 'row',
 
     },
     btnStyle: {
-        
+
         color: '#fff',
     }
 });

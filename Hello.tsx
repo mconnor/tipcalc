@@ -9,7 +9,7 @@ const Hello = () => {
     return (
    
             <View>
-                <Text style={styles.hello}>Howdy Partner</Text>
+                <Text style={styles.hello}>Hello Partner</Text>
             </View>
       
     )
