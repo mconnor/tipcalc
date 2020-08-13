@@ -4,26 +4,22 @@ import {
 } from 'react-native';
 import {
     Left,
-    Right, Header, Icon, Body, Title, Button
+    Right, Header, View, Body, Title
 } from 'native-base';
 
 const Head = () => {
     return (
-        <Header style={styles.header}>
-        <Left>
-            <Button transparent>
-                <Icon name='arrow-back' />
-            </Button>
-        </Left>
-        <Body>
-            <Title>My Header</Title>
-        </Body>
-        <Right>
-            <Button transparent>
-                <Icon name='menu' />
-            </Button>
-        </Right>
-    </Header>
+        <View style={styles.header}>
+            <Header>
+                <Left>
+                </Left>
+                <Body>
+                    <Title>Header</Title>
+                </Body>
+                <Right>
+                </Right>
+            </Header>
+        </View>
     )
 }
 

@@ -21,7 +21,7 @@ const Values:React.FC<Props> = ({ bill, tipPercent }) => {
 
     return(
         <View style={styles.values}>
-             <Text style={styles.label}>Tip</Text>
+            <Text style={styles.label}>Tip</Text>
             <Text style={styles.tip}>${tip.toFixed(2)}</Text>
             <Text style={styles.label}>Total Bill</Text>
             <Text style={styles.total}>${total.toFixed(2)}</Text>
@@ -31,7 +31,6 @@ const Values:React.FC<Props> = ({ bill, tipPercent }) => {
 
 
 const styles = StyleSheet.create({
-
     values: {
         alignItems: 'center',
         padding: 20,
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
     },
     total: {
         color: '#fff',
-        fontSize: 60,
+        fontSize: 30,
         fontWeight: 'bold'
     }
   

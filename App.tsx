@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import {
-    StyleSheet, TextInput, Text, View, Alert
+    StyleSheet, TextInput, Text, View, Button
 } from 'react-native';
 import {
-    Container, Content, Button, Icon
+    Container, Content
 } from 'native-base';
 import {
     useFonts,
@@ -46,42 +46,45 @@ export default function App() {
 
 
         return (
-
             <Container>
                 <Head />
                 <View style={styles.container}>
-                    <Content contentContainerStyle={styles.content}>
- 
+                    <Content style={{width: '100%'}}>
                         <Values
                             bill={copy}
                             tipPercent={tip}
                         />
-                        <TextInput
-                            value={copy}
-                            style={styles.input}
-                            keyboardType='numeric'
-                            placeholder='0.00'
-                            onChangeText={text => setCopy(text)} />
-                        <View style={styles.buttonGroup}>
-                            <Button
-                                onPress={() => setTip(.10)}
-                            >
-                                <Text style={styles.btnStyle}>
-                                    '10%'
-                                        </Text></Button>
-                            <Button
-                                onPress={() => setTip(.20)}
-                            ><Text>'20%'</Text></Button>
-                            <Button
-                                onPress={() => setTip(.30)}
-                            ><Text>'30%'</Text></Button>
+                        <View style={styles.inputs}>
                             <TextInput
-                                style={styles.customInput}
-                                placeholder='custom tip'
+                                value={copy}
+                                style={styles.input}
                                 keyboardType='numeric'
-                                onChangeText={(customTip) => setCustomTip(customTip)}
-                                value={(tip * 100).toString()}
-                            />
+                                placeholder='0.00'
+                                placeholderTextColor="#FFF"
+                                underlineColorAndroid="#FFF"
+                                onChangeText={text => setCopy(text)} />
+                            <View style={styles.buttonGroup}>
+                                <Button
+                                    title='10%'
+                                    onPress={() => setTip(.10)}
+                                ></Button>
+                                <Button
+                                    title='20%'
+                                    onPress={() => setTip(.20)}
+                                ></Button>
+                                <Button
+                                    title='30%'
+                                    onPress={() => setTip(.30)}
+                                ></Button>
+                                <TextInput
+                                    style={styles.customInput}
+                                    placeholder='custom tip'
+                                    placeholderTextColor="#FFF"
+                                    keyboardType='numeric'
+                                    onChangeText={(customTip) => setCustomTip(customTip)}
+                                    value={(tip * 100).toString()}
+                                />
+                            </View>
                         </View>
                     </Content>
                 </View>
@@ -111,23 +114,27 @@ const styles = StyleSheet.create({
     centerChild: {
         justifyContent: 'center'
     },
+    inputs: {
+        backgroundColor:'#212121',
+        padding: 20,
+    },
     input: {
         height: 80,
         width: '100%',
-        borderColor: '#333',
-        borderWidth: 1,
         padding: 5,
+        color: '#FFF'
     },
     customInput: {
         height: 40,
-        width: 100,
+        width: 60,
         borderColor: '#333',
-        borderWidth: 1,
         padding: 5,
+        color: '#FFF'
 
     },
     buttonGroup: {
         flexDirection: 'row',
+        justifyContent: 'space-between'
 
     },
     btnStyle: {
