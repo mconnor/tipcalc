@@ -13,8 +13,9 @@ const Values:React.FC<Props> = ({ bill, tipPercent }) => {
     useEffect(() => {
         if (bill) {
             setTip((parseFloat(bill) * tipPercent))
-            
             setTotal(parseFloat(bill) + tip)
+        } else  {
+            setTotal(0)
         }
        
     }, [bill, tipPercent])
@@ -33,9 +34,8 @@ const Values:React.FC<Props> = ({ bill, tipPercent }) => {
 const styles = StyleSheet.create({
     values: {
         alignItems: 'center',
-        padding: 20,
         backgroundColor: '#484848',
-        width: '100%'
+        flex:1
     }, 
     label: {
         color: '#fff'

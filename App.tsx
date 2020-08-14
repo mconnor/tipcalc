@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-    StyleSheet, TextInput, Text, View, Button
+    StyleSheet, TextInput, View, Button
 } from 'react-native';
 import {
     Container, Content
@@ -49,7 +49,7 @@ export default function App() {
             <Container>
                 <Head />
                 <View style={styles.container}>
-                    <Content style={{width: '100%'}}>
+                    <Content style={styles.content}>
                         <Values
                             bill={copy}
                             tipPercent={tip}
@@ -95,9 +95,6 @@ export default function App() {
     }
 }
 const styles = StyleSheet.create({
-    header: {
-        marginTop: 60,
-    },
     container: {
         flex: 1,
         flexDirection: 'column',
@@ -109,20 +106,20 @@ const styles = StyleSheet.create({
 
     },
     content: {
-        width: '100%',
-    },
-    centerChild: {
-        justifyContent: 'center'
+        flex: 1,
     },
     inputs: {
         backgroundColor:'#212121',
         padding: 20,
+       
     },
     input: {
         height: 80,
-        width: '100%',
+        flex:1,
         padding: 5,
-        color: '#FFF'
+        color: '#FFF',
+        borderBottomColor: 'red',
+        borderWidth: 1
     },
     customInput: {
         height: 40,
@@ -134,11 +131,10 @@ const styles = StyleSheet.create({
     },
     buttonGroup: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
 
     },
     btnStyle: {
-
         color: '#fff',
     }
 });
