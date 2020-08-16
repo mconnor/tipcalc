@@ -1,0 +1,17 @@
+{
+    "expo": {
+        "sdkVersion": "38.0.8",
+        "name": "tipcalc",
+        "slug": "tipcalc",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/images/icon_60pt@3x.png",
+        "githubUrl": "https://github.com/mconnor/tipcalc",
+        "ios": {
+            "bundleIdentifier": "info.cloudswing.tipcalc"
+        },
+        "android": {
+            "package": "info.cloudswing.tipcalc"
+        }
+    }
+}
