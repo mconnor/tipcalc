@@ -1,6 +1,6 @@
 {
     "expo": {
-        "sdkVersion": "38.0.8",
+        "sdkVersion": "38.0.0",
         "name": "tipcalc",
         "slug": "tipcalc",
         "version": "1.0.0",
