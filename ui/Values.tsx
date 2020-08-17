@@ -3,44 +3,36 @@ import { StyleSheet, View, Text } from 'react-native'
 
 
 type Props = {
-    bill:string;
-    tipPercent:number;
+    bill: string;
+    tipPercent: number;
 }
 
-const Values:React.FC<Props> = ({ bill, tipPercent }) => {
-    const [total, setTotal ]= useState(0)
-    const [tip, setTip ]= useState(0)
+const Values: React.FC<Props> = ({ bill, tipPercent }) => {
+    const [total, setTotal] = useState(0)
+    const [tip, setTip] = useState(0)
     useEffect(() => {
-       
+
         if (bill) {
             setTip((parseFloat(bill) * tipPercent))
- 
-            console.log('tip ' + tipPercent)
-            console.log('bill ' + bill)
-    
-        } else  {
+        } else {
             setTotal(0)
         }
-       
+
     }, [bill, tipPercent])
 
 
     useEffect(() => {
-       
         if (bill) {
-
             setTotal(parseFloat(bill) + tip)
- 
-            console.log('total ' + total)
-        } else  {
+        } else {
             setTotal(0)
         }
-       
+
     }, [tip])
 
 
-1
-    return(
+
+    return (
         <View style={styles.values}>
             <Text style={styles.label}>Tip</Text>
             <Text style={styles.tip}>${tip.toFixed(2)}</Text>
@@ -55,8 +47,8 @@ const styles = StyleSheet.create({
     values: {
         alignItems: 'center',
         backgroundColor: '#484848',
-        flex:1
-    }, 
+        flex: 1
+    },
     label: {
         color: '#fff'
     },
@@ -70,7 +62,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold'
     }
-  
+
 });
 
 

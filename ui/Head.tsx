@@ -14,7 +14,7 @@ const Head = () => {
                 <Left>
                 </Left>
                 <Body>
-                    <Title>Header</Title>
+                    <Title>Tip Calculator</Title>
                 </Body>
                 <Right>
                 </Right>
