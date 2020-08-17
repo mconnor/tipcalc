@@ -11,15 +11,35 @@ const Values:React.FC<Props> = ({ bill, tipPercent }) => {
     const [total, setTotal ]= useState(0)
     const [tip, setTip ]= useState(0)
     useEffect(() => {
+       
         if (bill) {
             setTip((parseFloat(bill) * tipPercent))
-            setTotal(parseFloat(bill) + tip)
+ 
+            console.log('tip ' + tipPercent)
+            console.log('bill ' + bill)
+    
         } else  {
             setTotal(0)
         }
        
     }, [bill, tipPercent])
 
+
+    useEffect(() => {
+       
+        if (bill) {
+
+            setTotal(parseFloat(bill) + tip)
+ 
+            console.log('total ' + total)
+        } else  {
+            setTotal(0)
+        }
+       
+    }, [tip])
+
+
+1
     return(
         <View style={styles.values}>
             <Text style={styles.label}>Tip</Text>
