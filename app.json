@@ -7,11 +7,11 @@
         "orientation": "portrait",
         "icon": "./assets/images/icon_60pt@3x.png",
         "githubUrl": "https://github.com/mconnor/tipcalc",
-        "ios": {
-            "bundleIdentifier": "info.cloudswing.tipcalc"
-        },
         "android": {
             "package": "info.cloudswing.tipcalc"
-        }
+        },
+        "ios": {
+            "bundleIdentifier": "com.kcmike504.tipcalc"
+          }
     }
 }
